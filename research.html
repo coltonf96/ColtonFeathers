@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Feathers Research</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="title">Colton R. Feathers</a>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="generic.html" class="active">Research</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">My Research</h1>
+							<p>I develop large-scale, semi-numeric simulations of Cosmic Dawn in order to predict the cosmological 21-cm signal for both current and planned observational surveys. </p>
+							<p>Cosmic Dawn refers to the era in which the first stars and galaxies formed, believed to have taken place within the first few hundred million years following the Big Bang. 
+								As these first sources turn on and emit radiation, they begin to ionize the neutral hydrogen gas pervading the young intergalactic medium (IGM) in the first stages of cosmic Reionization. 
+								This era is crucial to our understanding of cosmology as the conditions of the early universe heavily dictate the rate and intensity with which the first sources formed and began reionizing the cosmos. 
+								Further, observational data from Cosmic Dawn is currently scant due to vast cosmological distances, cosmic redshifting, and interlying foreground structures, meaning that we must turn to theoretical simulations to both predict observational constraints and interpret the results of future surveys.
+								My research therefore focuses on the development of self-consistent, large-scale simulations of Cosmic Dawn to study the impact that various assumptions and modelling techniques have on the observed 21-cm signal.
+								Such theoretical predictions may then be used to guide future observational surveys and interpret their results, allowing us to place constraints on the astrophysical processes that dominated the early universe and better our understanding of cosmic evolution.
+							</p>
+							<p> The first generation of stars to form in the early universe are known as Population III (PopIII) stars, characterized by their primordial composition. 
+								These first stars are believed to have formed within dark matter "minihalos" with virial masses of M<sub>vir</sub> = 10<sup>5</sup> - 10<sup>6</sup> M<sub>&#9737</sub> just a few tens of millions of years after Recombination.
+								Due to their metal-free composition, the avenues through which matter may cool and collapse to form PopIII stars are largely limited to atomic and molecular hydrogen transitions. 
+								Such transitions are relatively inefficent compared to those of heavier elements, meaning that PopIII stars are expected to reach much larger characteristic masses than modern metal-enriched stars, with some estimates even allowing for supermassive (~10<sup>5</sup> M<sub>&#9737</sub>) PopIII star formation under the right conditions.  
+								After PopIII stars form within a halo, they enrich it with their supernovae, eventually leading to the formation of lower mass, enriched Population II (PopII) stars. 
+								Both PopII and PopIII stars illuminate the young universe with their radiation, heating and ionizing the intergalactic gas in the first stages of cosmic reionization. 
+								Specific details of Cosmic Dawn remain uncertain, however, due to the lack of observational data. 
+							</p>
+							<p>Theoretical models of Cosmic Dawn currently span a wide range of techniques, from simplified analytic models aiming to predict global properties of the young universe to highly complex (magneto-)hydrodynamic simulations which include our most accurate theories and models of astrophysics to study small-scale structure formation in great detail.
+								While analytic models are efficient and may be used to probe large parameter spaces, they are naturally limited by their simplifying assumptions, often ignoring 3D spatial information or self-consistent feedback.
+								Conversely, while hydrodynamic simulations may yield precise results for a given realization, they are limited to relatively small simulation volumes due to the high computational demands, meaning they are inefficient for probing different techniques and assumptions as each realization may require millions of CPU-hours.
+								Semi-numeric simulations lie between these two extreme ends of theeoretical simulation techniques, including more sophisticated and self-consistent aspects than analytic models, while still being sufficiently computaionally efficient for probing the uncertain parameter spaces of Cosmic Dawn.
+								Throughout my graduate and post-doc careers, I have developed flexible, semi-numeric simulation of Cosmic Dawn in order to study the impact that various modelling techniques and assumptions have on the resulting 21-cm signal.
+							</p>
+							<p>My simulation framework is the first large-scale, self-consistent 3D simulation of Cosmic Dawn to include dark matter halo merger trees, and prescriptions for both PopIII and PopII star formation that are calibrated to the results of hydrodynamic simulations.
+								The simulation volume is 192 Mpc<sup>3</sup>, sufficiently large to account for self-consistent radiative feedback as Lyman-Werner photons may propegate >100 Mpc away from their stellar sources and dissociate H<sub>2</sub> molecules within other DM halos, suppressing their ability to cool and form stars themselves.
+								The volume is discretized into 64<sup>3</sup> cells, each 3 Mpc on a side, and initial conditions generated with 21cmFast assign each cell an overdensity value and relative baryon-DM streaming velocity.
+								Halo merger trees are then assigned to each cell based on their overdensity, and star formation is then modelled within each cell via artificial neural network (NN) emulators.
+								Each individual merger history is assigned a corresponding NN which is trained on several hundred realizations of radiative feedback and streaming velocities to rapidly emulate their internal star formation given their environmental conditions.
+								PopIII star formation proceeds within halos that overcome the critical mass for efficient cooling, resulting in a burst of star formation that begins emititng radiation and ultimately enriches the halo.
+								PopII star formation then proceeds within halos that have already formed PopIII stars and had sufficient time for them to live, die, and enrich the halo with heavier elements.
+								Both models yield stellar masses that are calibrated to the AEOS and Renaissance hydrodynamic simulations, which are then used to self-consistently determine the observed Lyman-Werner and Lyman-Alpha background radiation intesnities for all cells.
+								The simulation covers the first 300 Myr of cosmic history, corresponding to cosmic redshifts of z = 60-15, and yields the star formation rate density (SFRD) for a large-scale 3D volume.
+								The 21-cm signal is then evaluated for the simulation volume, accounting for Compton and X-ray heating, as well as Lyman-Alpha coupling which drives the Wouthuysen-Field effect.
+								These results may then be used to predict the global evolution of the 21-cm brightness temperature and its power spectrum across Cosmic Dawn, which may be used to estimate observability with both current and future surveys such as those planned for HERA, SKA, and MWA.
+							</p>
+							<figure>
+								<span class="image fit"> <video src="images/Movie.mp4" autoplay loop width="90%"></video>
+								<figcaption>Example results from my semi-numeric simulation framework. Simulation volume is 192 cMpc on a side, discretized into subgrid cells 3 cMpc on a side. 
+									Left column: The total cumulative PopIII (top) and PopII (bottom) stellar mass. 
+									Middle column: The Lyman-Werner (top) and Lyman-alpha (bottom) radiative background intensities. 
+									Right column: The resulting spin temperature (top) and 21-cm differential brightness temperature (bottom) of the intergalactic medium.</figcaption>
+							</figure>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
