@@ -40,6 +40,13 @@
 								My research therefore focuses on the development of self-consistent, large-scale simulations of Cosmic Dawn to study the impact that various assumptions and modelling techniques have on the observed 21-cm signal.
 								Such theoretical predictions may then be used to guide future observational surveys and interpret their results, allowing us to place constraints on the astrophysical processes that dominated the early universe and better our understanding of cosmic evolution.
 							</p>
+							<figure>
+								<span class="image fit"> <video src="images/Movie.mp4" autoplay loop width="90%"></video>
+								<figcaption>Example results from my semi-numeric simulation framework. Simulation volume is 192 cMpc on a side, discretized into subgrid cells 3 cMpc on a side. 
+									Left column: The total cumulative PopIII (top) and PopII (bottom) stellar mass. 
+									Middle column: The Lyman-Werner (top) and Lyman-alpha (bottom) radiative background intensities. 
+									Right column: The resulting spin temperature (top) and 21-cm differential brightness temperature (bottom) of the intergalactic medium.</figcaption>
+							</figure>
 							<p> The first generation of stars to form in the early universe are known as Population III (PopIII) stars, characterized by their primordial composition. 
 								These first stars are believed to have formed within dark matter "minihalos" with virial masses of M<sub>vir</sub> = 10<sup>5</sup> - 10<sup>6</sup> M<sub>&#9737</sub> just a few tens of millions of years after Recombination.
 								Due to their metal-free composition, the avenues through which matter may cool and collapse to form PopIII stars are largely limited to atomic and molecular hydrogen transitions. 
@@ -66,13 +73,12 @@
 								The 21-cm signal is then evaluated for the simulation volume, accounting for Compton and X-ray heating, as well as Lyman-Alpha coupling which drives the Wouthuysen-Field effect.
 								These results may then be used to predict the global evolution of the 21-cm brightness temperature and its power spectrum across Cosmic Dawn, which may be used to estimate observability with both current and future surveys such as those planned for HERA, SKA, and MWA.
 							</p>
-							<figure>
-								<span class="image fit"> <video src="images/Movie.mp4" autoplay loop width="90%"></video>
-								<figcaption>Example results from my semi-numeric simulation framework. Simulation volume is 192 cMpc on a side, discretized into subgrid cells 3 cMpc on a side. 
-									Left column: The total cumulative PopIII (top) and PopII (bottom) stellar mass. 
-									Middle column: The Lyman-Werner (top) and Lyman-alpha (bottom) radiative background intensities. 
-									Right column: The resulting spin temperature (top) and 21-cm differential brightness temperature (bottom) of the intergalactic medium.</figcaption>
-							</figure>
+							<p>Thanks to the flexible nature of my simulation framework, I am able to run multiple realizations with different assumptions and modelling techniques to study the impact that each has on the resulting 21-cm signal.
+								I have so far used this framework to probe the impacts of calibrating star formation to hydrodynamic simulation results, the PopIII and PopII star formation efficiencies, the delay period separating PopIII and PopII star formation, and even the impact of including DM halo merger trees.
+								Currently, I am working towards adapting the framework to a fuzzy dark matter cosmology to study its impact on the 21-cm signal, and have plans to study the impact of primordial black holes on the signal as well.
+								I am also working to extend the simulation to even higher redshifts as a means of probing the Dark Ages signal and using the results alongside CMB measurements to constrain primordial non-Gaussianity.
+								As the field of 21-cm cosmology grows and evolves, my accurate and adaptable simulation framework may grow and evolve alongside it, providing observational predictions and constraining the available parameter space as data arrives.
+							</p>
 						</div>
 					</section>
 
